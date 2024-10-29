@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatsec.css') }}">
+</head>
+<body>
+    <div class="img">
+        <img src="{{ url_for('static', filename='img/Capture d’écran 2024-06-21 à 12.35.12.png') }}" id="mainImage">
+        <div id="loadingScreen" class="overlay" style="display: none;">
+            <div class="loading-bar">
+                <div class="loading-fill"></div> 
+            </div>
+        </div>  
+    </div>
+    <script>
+    window.onload = function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.style.display = 'flex'; 
+
+        setTimeout(function() {
+            window.location.href = "{{ url_for('login') }}"; 
+        }, 5000); 
+    };
+    </script>
+</body>
+</html>
